@@ -1,27 +1,18 @@
 package com.example.dylan.cs477;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class Registration extends Activity {
+public class RestarauntDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_restaraunt_details);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_registration, menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -36,9 +27,5 @@ public class Registration extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void Catalog(View v){
-        Intent intent=new Intent(getBaseContext(),Restraunt.class);
-        startActivity(intent);
     }
 }

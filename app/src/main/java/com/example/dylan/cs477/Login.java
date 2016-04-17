@@ -1,13 +1,16 @@
 package com.example.dylan.cs477;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
 
     EditText username, password;
     Button confirmLogin;
@@ -44,5 +47,13 @@ public class Login extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void Registration(View v){
+        Intent intent = new Intent(getBaseContext(),Registration.class);
+        startActivity(intent);
+    }
+    public void Catalog(View v){
+        Intent intent=new Intent(getBaseContext(),Restraunt.class);
+        startActivity(intent);
     }
 }
