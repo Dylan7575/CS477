@@ -4,13 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Button;
 
 public class Login extends AppCompatActivity {
+
+    EditText username, password;
+    Button confirmLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        username = (EditText) findViewById(R.id.editText4);
+        password = (EditText) findViewById(R.id.editText5);
+        String user = username.getText().toString();
+        String pass = password.getText().toString();
+
     }
 
     @Override
