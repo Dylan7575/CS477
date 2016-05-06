@@ -17,120 +17,90 @@ public class ShoppingCartHelper {
 
     private static List<Product> catalog;
     private static Map<Product, ShoppingCartEntry> cartMap = new HashMap<Product, ShoppingCartEntry>();
+
     public static List<Product> getCatalog(Resources res,String restaurantName){
-         int doasize=2;
-         int switchsize=2;
-         int watchmensize=5;
+
+        Product whisky =new Product("Whiskey and Coke", res
+                .getDrawable(R.mipmap.jack),
+                "On the Rocks with your choice of Jack Daniels or Evan Williams",4.00);
+        Product coke=new Product("Coke", res
+                .getDrawable(R.mipmap.cok),
+                "The Original", 2.00);
+        Product screwdriver=new Product("Screwdriver", res
+                .getDrawable(R.mipmap.screwdriver),
+                "Vodka and orange juice", 6.00);
+        Product Tequila=new Product("Tequila", res
+                .getDrawable(R.mipmap.tequila),"Shots",3.00);
+        Product coorsLight =new Product("Coors Light", res
+                .getDrawable(R.mipmap.can),
+                "The Silver Bullet", 2.00);
+        Product MolotovCocktail =new Product("Molotov Cocktail", res
+                .getDrawable(R.mipmap.mol),
+                "Fireball and vodka", 4.00);
+        Product Dude=new Product("White Russian", res
+                .getDrawable(R.mipmap.kahlua),
+                "That's just like your opinion man", 6.00);
+        Product Fireball =(new Product("Fireball", res
+                .getDrawable(R.mipmap.fireball),
+                "2 Shots all included", 8.00));
+        Product MountainDew =new Product("Mountain Dew", res
+                .getDrawable(R.mipmap.dew),
+                "Do the Dew", 1.00);
+        List<Product> Maloney = new Vector<Product>();
+        Maloney.add(Tequila);
+        Maloney.add(coorsLight);
+        Maloney.add(MolotovCocktail);
+        List<Product> Collins = new Vector<Product>();
+        Collins.add(whisky);
+        Collins.add(coke);
+        Collins.add(screwdriver);
+        List<Product>Monsoon = new Vector<Product>();
+        Monsoon.add(Dude);
+        Monsoon.add(Fireball);
+        Monsoon.add(MountainDew);
             if (catalog==null) {
                 catalog = new Vector<Product>();
-                if (restaurantName.equals("Dead or Alive")) {
-                    catalog.add(new Product("Dead or Alive", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Dead or Alive by Tom Clancy with Grant Blackwood", 29.99));
-                    catalog.add(new Product("Dead or Alive", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Dead or Alive by Tom Clancy with Grant Blackwood", 29.99));
-                    catalog.add(new Product("Dead or Alive", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Dead or Alive by Tom Clancy with Grant Blackwood", 29.99));
-                }
-                if (restaurantName.equals("Switch")) {
-                    catalog.add(new Product("Switch", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Switch by Chip Heath and Dan Heath", 24.99));
-                    catalog.add(new Product("Switch", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Switch by Chip Heath and Dan Heath", 24.99));
-                    catalog.add(new Product("Switch", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Switch by Chip Heath and Dan Heath", 24.99));
+                if (restaurantName.equals("Collins")) {
+                        catalog.add(whisky);
+                        catalog.add(coke);
+                        catalog.add(screwdriver);
 
                 }
-                if (restaurantName.equals("Watchmen")) {
-
-                    catalog.add(new Product("Watchmen1", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                    catalog.add(new Product("Watchmen2", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                    catalog.add(new Product("Watchmen3", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                    catalog.add(new Product("Watchmen4", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                    catalog.add(new Product("Watchmen5", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                    catalog.add(new Product("Watchmen6", res
-                            .getDrawable(R.mipmap.ic_launcher),
-                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
+                if (restaurantName.equals("Maloney's")) {
+                    catalog.add(Tequila);
+                    catalog.add(coorsLight);
+                    catalog.add(MolotovCocktail);
+                }
+                if (restaurantName.equals("Monsoon's")) {
+                    catalog.add(Dude);
+                    catalog.add(Fireball);
+                    catalog.add(MountainDew);
                 }
             }
        else {
-                for(int j=0;j<catalog.size()-1;j++) {
-                    if (restaurantName.equals("Dead or Alive") && catalog.get(j).title != ("Dead or Alive")) {
-                        for (int i = catalog.size()-1; i >=0; i--) {
-                            if(catalog.get(i)!=null) {
-                                if (i <= doasize) {
-                                    catalog.set(i, new Product("Dead or Alive", res
-                                            .getDrawable(R.mipmap.ic_launcher),
-                                            "Dead or Alive by Tom Clancy with Grant Blackwood", 29.99));
-                                }
-                                else catalog.remove(i);
-                            }
-
-
-                            }for(int i =catalog.size();i<doasize;i++){
-                                catalog.add(new Product("Dead or Alive", res
-                                        .getDrawable(R.mipmap.ic_launcher),
-                                        "Dead or Alive by Tom Clancy with Grant Blackwood", 29.99));
+                if (restaurantName.equals("Monsoon's")){
+                    for(int i=0;i<catalog.size();i++){
+                        if(catalog.get(i).title!=Monsoon.get(i).title) {
+                            catalog.set(i, Monsoon.get(i));
                         }
-
-                    }
-                    if (restaurantName.equals("Switch") && catalog.get(j).title != ("Switch")) {
-
-                        for (int i = catalog.size()-1; i >= 0; i--) {
-                            if (catalog.get(i)!=null) {
-                                if (i <= switchsize) {
-                                    catalog.set(i, new Product("Switch", res
-                                            .getDrawable(R.mipmap.ic_launcher),
-                                            "Switch by Chip Heath and Dan Heath", 24.99));
-                                } else {
-                                    catalog.remove(i);
-                                }
-                            }
-                        }
-                        for(int i=catalog.size();i<switchsize;i++) {
-                            catalog.add(new Product("Switch", res
-                                    .getDrawable(R.mipmap.ic_launcher),
-                                    "Switch by Chip Heath and Dan Heath", 24.99));
-                        }
-
-
-
                     }
 
-                    if (restaurantName.equals("Watchmen") && catalog.get(j).title != ("Watchmen")&& catalog.get(j).title != ("Watchmen1")&& catalog.get(j).title != ("Watchmen2")
-                            && catalog.get(j).title != ("Watchmen3")&& catalog.get(j).title != ("Watchmen4")&& catalog.get(j).title != ("Watchmen5")&& catalog.get(j).title != ("Watchmen6")) {
-                        for (int i = catalog.size()-1; i >=0; i--) {
-                            if(catalog!=null) {
-                                if (i <= watchmensize) {
-                                    catalog.set(i, new Product("Watchmen", res
-                                            .getDrawable(R.mipmap.ic_launcher),
-                                            "Watchmen by Alan Moore and Dave Gibbons", 14.99));
-                                } else
-                                    catalog.remove(i);
-                            }
-                        }
-                        for(int i = catalog.size();i<=watchmensize;i++){
-                            catalog.add( new Product("Watchmen", res
-                                    .getDrawable(R.mipmap.ic_launcher),
-                                    "Watchmen by Alan Moore and Dave Gibbons", 14.99));
+                }
+                if (restaurantName.equals("Maloney's")){
+                    for(int i=0;i<catalog.size();i++){
+                        if(catalog.get(i).title!=Maloney.get(i).title) {
+                            catalog.set(i, Maloney.get(i));
                         }
                     }
                 }
+                if (restaurantName.equals("Collins")){
+                    for(int i=0;i<catalog.size();i++){
+                        if(catalog.get(i).title!=Collins.get(i).title) {
+                            catalog.set(i, Collins.get(i));
+                        }
+                    }
+                }
+
             }return catalog;
     }
 
@@ -178,6 +148,5 @@ public class ShoppingCartHelper {
 
         return cartList;
     }
-
 
 }

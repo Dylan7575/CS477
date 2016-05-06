@@ -21,15 +21,15 @@ public class RestarauntHelper {
     public static List<Restaraunt> getCatalog(Resources res) {
         if (catalog == null) {
             catalog = new Vector<Restaraunt>();
-            catalog.add(new Restaraunt("Dead or Alive", res
-                    .getDrawable(R.mipmap.ic_launcher),
-                    "Dead or Alive by Tom Clancy with Grant Blackwood"));
-            catalog.add(new Restaraunt("Switch", res
-                    .getDrawable(R.mipmap.ic_launcher),
-                    "Switch by Chip Heath and Dan Heath"));
-            catalog.add(new Restaraunt("Watchmen", res
-                    .getDrawable(R.mipmap.ic_launcher),
-                    "Watchmen by Alan Moore and Dave Gibbons"));
+            catalog.add(new Restaraunt("Collins", res
+                    .getDrawable(R.mipmap.collins),
+                    ""));
+            catalog.add(new Restaraunt("Maloney's", res
+                    .getDrawable(R.mipmap.logo),
+                    ""));
+            catalog.add(new Restaraunt("Monsoon's", res
+                    .getDrawable(R.mipmap.r),
+                    ""));
         }
 
         return catalog;

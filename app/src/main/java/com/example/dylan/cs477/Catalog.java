@@ -32,7 +32,7 @@ public class Catalog extends Activity {
         final Restaraunt selectedProduct = catalog.get(productIndex);
         restaurantName=selectedProduct.Name;
 
-        List<Product>mcartlist=ShoppingCartHelper.getCartList();
+        List<Product> mcartlist=ShoppingCartHelper.getCartList();
         if(ShoppingCartHelper.getCartList()!=null) {
             for (int i = 0; i < mcartlist.size(); i++) {
                 Product ShopRemove = mcartlist.get(i);

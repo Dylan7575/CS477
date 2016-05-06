@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 public class ProductDetails extends Activity {
@@ -31,13 +32,15 @@ public class ProductDetails extends Activity {
         // Set the proper image and text
         ImageView productImageView = (ImageView) findViewById(R.id.ImageViewProduct);
         productImageView.setImageDrawable(selectedProduct.productImage);
+
         TextView productTitleTextView = (TextView) findViewById(R.id.TextViewProductTitle);
         productTitleTextView.setText(selectedProduct.title);
         TextView productDetailsTextView = (TextView) findViewById(R.id.TextViewProductDetails);
         productDetailsTextView.setText(selectedProduct.description);
 
         TextView productPriceTextView = (TextView) findViewById(R.id.TextViewProductPrice);
-        productPriceTextView.setText("$" + selectedProduct.price);
+        NumberFormat f=NumberFormat.getCurrencyInstance();
+        productPriceTextView.setText(f.format(selectedProduct.price));
 
         // Update the current quantity in the cart
         TextView textViewCurrentQuantity = (TextView) findViewById(R.id.textViewCurrentlyInCart);

@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="fill_parent" android:background="#ffffff">
+    android:layout_height="fill_parent" android:background="#010101"
+    android:weightSum="1">
 
     <TextView android:id="@+id/ProdCat" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:textColor="#000000"
+        android:layout_height="wrap_content" android:textColor="#ffffff"
         android:textSize="24dip" android:layout_margin="5dip" android:text="Product Catalog"></TextView>
-    <ListView android:layout_height="500dp"
+    <ListView android:layout_height="570dp"
         android:id="@+id/ListViewCatalog"
-        android:layout_width="fill_parent" android:background="#ffffff"
+        android:layout_width="fill_parent" android:background="#868686"
         android:clickable="true" android:cacheColorHint="#ffffff">
     </ListView>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right" android:id="@+id/ButtonViewCart"
+        android:text="View Shopping Cart"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#010101"
+        android:background="#7dffe7"></Button>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="59dp">
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right" android:id="@+id/ButtonViewCart"
-            android:text="View Shopping Cart"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"></Button>
-
 
     </RelativeLayout>
+
 </LinearLayout>
 
 
